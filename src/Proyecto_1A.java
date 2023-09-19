@@ -1,21 +1,36 @@
+import java.util.Scanner;
+
 public class Proyecto_1A {
 
-    private static int Practica1A(int x, int z) {
-        System.out.println("Igualar el valor de y y z");
-        if (x != z) {
-            x = z;
+    private static int Practica1A(int y, int z) {
+
+
+        if (y == z) {
+            return 0;
+        } else {
+            int x=y*y;
+            return x+ Practica1A(y+1,z);
         }
-        return x;
     }
 
     public static void main(String[] args) {
-        int x, y, z;
-        y = 1;
-        z = 10;
-        x = y;
+        Scanner scanner=new Scanner(System.in);
 
-        int resultado = Practica1A(x, z);
+        int y, z;
+
+        System.out.println("Incrementar y elevar al cuadrado hasta que x sea igual a z");
+
+        System.out.println("Introduce el valor de y");
+        y=scanner.nextInt();
+
+        System.out.println("Introduce el valor de z");
+        z=scanner.nextInt();
+
+        int resultado = Practica1A(y, z);
 
         System.out.println("El resultado final es: " + resultado);
+
     }
+
+
 }
